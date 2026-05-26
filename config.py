@@ -24,11 +24,11 @@ class Config:
         self.SESSION3 = getenv("SESSION3", None)
 
 
-        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Apexservers")
-        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Apexdiscusion")
+        self.SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/chgajezp")
+        self.SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/sukasukazp")
         
-        self.AUTO_LEAVE: bool = getenv("AUTO_LEAVE", "False").lower() == "true"
-        self.AUTO_END: bool = getenv("AUTO_END", "False").lower() == "true"
+        self.AUTO_LEAVE: bool = getenv("AUTO_LEAVE", "False").lower() == "false"
+        self.AUTO_END: bool = getenv("AUTO_END", "False").lower() == "false"
     
         self.THUMB_GEN: bool = getenv("THUMB_GEN", "True").lower() == "true"
         self.VIDEO_PLAY: bool = getenv("VIDEO_PLAY", "True").lower() == "true"
