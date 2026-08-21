@@ -17,6 +17,16 @@ from anony import logger
 from anony.helpers import Track, utils
 
 
+class DummyLogger:
+    def debug(self, msg):
+        pass
+
+    def warning(self, msg):
+        pass
+
+    def error(self, msg):
+        pass
+
 class YouTube:
     def __init__(self):
         self.base = "https://www.youtube.com/watch?v="
@@ -126,8 +136,10 @@ class YouTube:
             "geo_bypass": True,
             "no_warnings": True,
             "overwrites": False,
+            "logger": DummyLogger(),
             "nocheckcertificate": True,
             "cookiefile": cookie,
+            "remote_components": ["ejs:github"],
         }
 
         if video:

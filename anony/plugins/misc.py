@@ -41,15 +41,19 @@ async def auto_leave():
 
 
 async def track_time():
-    while True:
-        await asyncio.sleep(1)
-        for chat_id in list(db.active_calls):
-            if not await db.playing(chat_id):
-                continue
-            media = queue.get_current(chat_id)
-            if not media:
-                continue
-            media.time += 1
+    try:
+        while True:
+            await asyncio.sleep(1)
+            for chat_id in list(db.active_calls):
+                if not await db.playing(chat_id):
+                    continue
+
+                media = queue.get_current(chat_id)
+                if not media:
+                    continue
+                media.time += 1
+    except asyncio.CancelledError:
+        raise
 
 
 async def update_timer(length=10, sleep=12):
